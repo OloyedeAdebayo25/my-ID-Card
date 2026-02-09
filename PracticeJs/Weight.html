@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    // for (initialization ; establish how many iterations ; increase or decrease) {
+    //   write my algorithm
+    //}
+
+
+    for (let beginValue = 1; beginValue <= 5; beginValue++) {
+        console.log('hello');
+        console.log(beginValue);
+
+    }
+
+    for (let index = 0; index >= -4; index--) {
+        console.log('hello');
+        console.log(index);
+
+    }
+
+    //0 * 0 = 0
+    // 1 * 1 = 1
+    // 2 * 2 = 4
+    //  3 * 3 = 9
+    //  4 * 4 = 16
+    //  5 * 5 = 25
+
+    for (let initialValue = 12; initialValue >= 0; initialValue--) {
+        // let ans = initialValue * initialValue; // 5 * 5
+        console.log(`5 * ${initialValue} = ${5 * initialValue}`);
+
+
+
+    }
+
+
+    let arr = [1, 2, 3, 4, 5]
+    // add to end of array
+    arr.push(6, 7, 8)
+
+    // add to the beggining of array
+    arr.unshift(-1, 0)
+
+    // remove a singular member from the end of the array
+    arr.pop()
+    arr.pop()
+    arr.pop()
+
+    // remove a singular member from the beginning of the array
+    arr.shift()
+
+
+    console.log(arr);
+    let distortedArr = [2, 3, 4, 1, 36, 4]
+    distortedArr.sort((a, b) => a - b)
+    console.log(distortedArr);
+
+    let textArr = ['me', 'hey', 'wow', 'ant']
+    textArr.sort()
+    console.log(textArr);
+
+
+    const countries = ['Finland', 'Sweden', 'Denmark', 'Zambia', 'Norway', 'Iceland']
+    const newArr = []
+    const anotherArr = []
+
+    for (let i = 0; i < countries.length; i++) {
+        newArr.push(countries[i].toUpperCase())
+    }
+
+    for (let index = countries.length - 1; index >= 0; index--) {
+        anotherArr.push(countries[index].toUpperCase())
+
+    }
+
+    console.log(anotherArr);
+
+    console.log(newArr);
+
+
+
+</script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planet Weight Calculator</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("https://i.imgur.com/7b1ZQ9P.jpg") no-repeat center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 32px;
+        }
+
+        .controls {
+            margin: 30px auto;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #4b4bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #3737d6;
+        }
+
+        .result-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            min-height: 250px;
+        }
+
+        .planet-container img {
+            width: 200px;
+            display: none;
+        }
+
+        /* Rotation animation */
+        .rotate {
+            display: block;
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .result-text {
+            font-size: 20px;
+        }
+
+        .weight {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculate the weight of an object on a planet</h1>
+
+    <div class="controls">
+        <input type="number" id="massInput" placeholder="Mass in Kg">
+
+        <select id="planetSelect">
+            <option value="">-- Select planet --</option>
+            <option value="earth" data-image="https://i.imgur.com/9Xq9ZQb.png">Earth</option>
+            <option value="moon" data-image="https://i.imgur.com/U4iGx1j.png">Moon</option>
+            <option value="mars" data-image="https://i.imgur.com/4yR5Y5E.png">Mars</option>
+            <option value="venus" data-image="https://i.imgur.com/1JQ9ZQb.png">Venus</option>
+            <option value="jupiter" data-image="https://i.imgur.com/3z3ZJZJ.png">Jupiter</option>
+        </select>
+
+        <button id="calculateBtn">Calculate weight</button>
+    </div>
+
+    <div class="result-box">
+        <div class="planet-container">
+            <img id="planetImage">
+        </div>
+
+        <div class="result-text">
+            <p id="resultText"></p>
+            <div class="weight" id="weightResult"></div>
+        </div>
+    </div>
+
+    <script>
+        const massInput = document.getElementById("massInput");
+        const planetSelect = document.getElementById("planetSelect");
+        const planetImage = document.getElementById("planetImage");
+        const resultText = document.getElementById("resultText");
+        const weightResult = document.getElementById("weightResult");
+        const calculateBtn = document.getElementById("calculateBtn");
+
+        const gravity = {
+            earth: 9.81,
+            moon: 1.62,
+            mars: 3.71,
+            venus: 8.87,
+            jupiter: 24.79
+        };
+
+        calculateBtn.addEventListener("click", function () {
+            const mass = massInput.value;
+            const selectedOption = planetSelect.options[planetSelect.selectedIndex];
+            const planet = selectedOption.value;
+
+            if (mass === "" || planet === "") {
+                alert("Please enter a mass and select a planet");
+                return;
+            }
+
+            // Set image and rotate
+            planetImage.src = selectedOption.dataset.image;
+            planetImage.className = "rotate";
+
+            // Calculate weight
+            const weight = mass * gravity[planet];
+
+            resultText.innerHTML = `The object’s weight on planet <strong>${selectedOption.text}</strong> is`;
+            weightResult.textContent = weight.toFixed(2) + " N";
+        });
+    </script>
+
+</body>
+</html>

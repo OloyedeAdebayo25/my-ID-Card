@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Number Guess Game</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .game {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game">
+    <h2>Guess the Number</h2>
+    <p>Guess a number between <strong>1 and 5</strong></p>
+
+    <input type="number" id="guess" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Guess</button>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    let randomNumber = Math.floor(Math.random() * 5) + 1;
+
+    function checkGuess() {
+      let userGuess = document.getElementById("guess").value;
+      let message = document.getElementById("message");
+
+      if (userGuess < 1 || userGuess > 5 || userGuess === "") {
+        message.textContent = "Please enter a number between 1 and 5.";
+        message.style.color = "red";
+        return;
+      }
+
+      if (userGuess == randomNumber) {
+        message.textContent = "🎉 Correct! You guessed right!";
+        message.style.color = "green";
+      } else {
+        message.textContent = "❌ Wrong! Try again.";
+        message.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>

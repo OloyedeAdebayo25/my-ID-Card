@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputTag" type="text">
+    <button onclick="clickMe()">ShowResult</button>
+    <h3 id="result"></h3>
+</body>
+</html>
+<script>
+ function clickMe() {
+    let input = document.getElementById('inputTag')
+    let output = document.getElementById('result')
+    // console.log(input.value);
+    let result = input.value 
+
+    output.innerHTML = result
+     let alerter= alert(`thanks for coming ${result}`)
+    let confirmer = confirm('are you sure you want to contnue?')
+
+    console.log(confirmer, alerter);
+    
+ }
+
+ let prompter = prompt('please input your name')
+ console.log(prompter);
+let number = 15 > 9
+//  if (number) {
+//     alert('good')
+//  } else {
+//     alert('bad')
+//  }
+ 
+
+number? alert('thios is really good'):console.log('this is tenary');
+
+
+
+
+</script>

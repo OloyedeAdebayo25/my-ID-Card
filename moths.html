@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Days in a Month</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+    }
+    button {
+      padding: 10px 15px;
+      background: green;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Enter Month</h2>
+    <input type="text" id="monthInput" placeholder="e.g. March or 3">
+    <button onclick="checkDays()">Check Days</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkDays() {
+      let month = document.getElementById("monthInput").value.trim().toLowerCase();
+      let result = document.getElementById("result");
+      let days;
+
+      // map of months
+      const months = {
+        january: 31, february: 28, march: 31, april: 30, may: 31, june: 30,
+        july: 31, august: 31, september: 30, october: 31, november: 30, december: 31
+      };
+
+      if (!isNaN(month)) {
+        // input is a number
+        month = parseInt(month);
+        if (month < 1 || month > 12) {
+          result.innerHTML = "<span class='error'>This is an Invalid Month</span>";
+          return;
+        }
+        days = [31,28,31,30,31,30,31,31,30,31,30,31][month - 1];
+      } else {
+        // input is text
+        if (months[month]) {
+          days = months[month];
+        } else {
+          result.innerHTML = "<span class='error'>This is an Invalid Month</span>";
+          return;
+        }
+      }
+
+      result.innerHTML = `<span class="success">${days} days</span>`;
+    }
+  </script>
+</body>
+</html>

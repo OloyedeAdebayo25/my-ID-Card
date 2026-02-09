@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+function analyzeAges(ages) {
+  // Sort the array
+  ages.sort((a, b) => a - b);
+  console.log(ages.sort((a, b) => a - b));
+  
+
+  // Min & Max
+  let min = ages[0];
+  let max = ages[ages.length - 1];
+
+  // Median
+  let middle = Math.floor(ages.length / 2);
+  let median =
+    ages.length % 2 === 0
+      ? (ages[middle - 1] + ages[middle]) / 2
+      : ages[middle];
+
+  // Average
+  let sum = 0;
+  for (let age of ages) {
+    sum += age;
+  }
+  let average = sum / ages.length;
+
+  // Range
+  let range = max - min;
+
+  // Compare differences using abs()
+  let minDiff = Math.abs(min - average);
+  let maxDiff = Math.abs(max - average);
+
+  return {
+    sortedAges: ages,
+    min,
+    max,
+    median,
+    average,
+    range,
+    minDifference: minDiff,
+    maxDifference: maxDiff
+  };
+}
+
+</script>

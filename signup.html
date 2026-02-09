@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="styling">
+    <h1>Type to see censored Words</h1>
+    <input type="text" id="inputbox">
+    <button onclick="seebiggeroutput()" id="btn">See Bigger Output</button>
+    <h1 id="inputbiggername"></h1>
+    </div>
+</body>
+</html>
+<script>
+    let styling = document.getElementById('styling')
+    styling.style.width = '500px'
+    styling.style.height = '300px'
+    styling.style.backgroundColor = 'orange'
+    styling.style.margin = 'auto'
+    styling.style.padding = '20px'
+    let inputbox = document.getElementById('inputbox')
+    inputbox.style.width ='300px'
+    inputbox.style.height ='20px'
+    inputbox.style.borderRadius ='10px'
+    inputbox.style.border ='none'
+    let inputbiggername = document.getElementById('inputbiggername')
+
+    let btn =  document.getElementById('btn')
+    btn.style.height = '20px'
+    btn.style.backgroundColor = 'Pink'
+    btn.style.border = 'none'
+    btn.style.borderRadius = '10px'
+
+    function seebiggeroutput() {
+        let userText = inputbox.value.toLowerCase();
+        userText = userText.replaceAll('shit', 's**t');
+        userText = userText.replaceAll('fuck', 'f**k');
+        userText = userText.replaceAll('bitch', 'b***h');
+        userText = userText.replaceAll('hell', 'h**l');
+        userText = userText.replaceAll('nigga', 'n***a');
+        userText = userText.replaceAll('crazy', 'c***y');
+    inputbiggername.innerHTML = userText;
+    }
+</script>

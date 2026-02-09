@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let string = 'fhhdsjs'
+    let numOne = 8
+    let numTwo = 6
+    let numThree = 2
+
+    let add = numOne + numTwo
+    let subtract = numOne - numTwo
+    let divide = numOne / numTwo
+    let multiply = numOne * numTwo
+    let raisedToPower = numOne ** numTwo //6^2
+    let modulus = numOne % numTwo //2
+
+
+
+    console.log(add, subtract, divide, multiply, raisedToPower, modulus);
+
+    //type casting
+    // first method of converting a STRING to a NUMBER is using thr parseInt() function
+    // second method is using the Number constructor
+    //third method is usin the plus sign
+
+    let stringOne = '894'
+    let newNumber =parseInt(stringOne)
+    console.log(stringOne , newNumber , typeof(stringOne) , typeof(newNumber));
+
+    let newNumber2 = Number(stringOne)
+    console.log(newNumber2 , typeof newNumber2);
+    let newNumber3 = +stringOne
+
+
+    // Math Objects
+
+        //Math property PI
+        console.log(Math.PI); //// 3.141
+
+        //Math method round
+        console.log(Math.round(9.5));  //to round values to the nearest number
+
+        //Math method floor
+        console.log(Math.floor(0.4));  //rounding down
+
+        //Math Method ceil
+        console.log(Math.ceil(0.6));  //rounding up
+
+        //Math method random
+        console.log(Math.random());   // gives you a random number between 0 - 0.99999
+
+        console.log(Math.random()); // 0 -10.98
+        //lowest- 0.0 * 11=0
+        //highest= 0.999 * 11 = 10.98
+
+        //Math.floor(Math.random() *11)
+        Math.floor(Math.random()*11)
+        console.log(Math.floor(Math.random() *11));
+
+        Math.floor(Math.random() *21)
+        console.log(Math.floor(Math.random()*21));
+
+        Math.ceil(Math.random()*9.99999)
+        console.log(Math.ceil(Math.random()*9.99999));
+
+        //0.002 - 3.99 // 1 + 1 - 4 + 1
+        Math.ceil(Math.random() * 4) + 1 //2-5
+        console.log(Math.ceil(Math.random() * 4) + 1); //2-5
+
+        Math.floor(Math.random() * 4) + 2
+</script>

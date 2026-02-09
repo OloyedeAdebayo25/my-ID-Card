@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="firstNumber"> <input type="text" id="secondNumber">
+    <button onclick="multiply()">Multiply</button>
+    <p id="display"></p>
+</body>
+</html>
+
+<script>
+    let first = document.getElementById('firstNumber').value
+    let second = document.getElementById('secondNumber').value
+
+
+    function multiply() {
+        if (!first==='' || second==='') {
+            alert('Input a Number')
+            return;
+        }
+        if (first==='  ' || second==='  ') {
+            alert('input only number')
+            return;
+
+        }for (let index = first; index <= second.length; index++) {
+            
+            
+        }
+        
+    }
+</script>

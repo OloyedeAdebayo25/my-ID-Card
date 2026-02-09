@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Grade Checker</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Grade Checker</h2>
+    <input type="number" id="score" placeholder="Enter score (0–100)">
+    <button onclick="checkGrade()">Check Grade</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkGrade() {
+      let score = document.getElementById("score").value;
+      let result = document.getElementById("result");
+
+      if (score === "" || score < 0 || score > 100) {
+        result.textContent = "Please enter a valid score (0–100)";
+        result.style.color = "red";
+        return;
+      }
+
+      let grade;
+
+      if (score >= 80) {
+        grade = "A";
+      } else if (score >= 70) {
+        grade = "B";
+      } else if (score >= 60) {
+        grade = "C";
+      } else if (score >= 50) {
+        grade = "D";
+      } else {
+        grade = "F";
+      }
+
+      result.textContent = "Grade: " + grade;
+      result.style.color = "green";
+    }
+  </script>
+
+</body>
+</html>

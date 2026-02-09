@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <button onclick="Days()">num of days</button>
+    <p id="pTag"></p>
+</body>
+</html>
+<script>
+
+    let userInput = document.getElementById('month')
+     let display = document.getElementById('pTag')
+
+       function Days() {
+       let userMonth =  userInput.value.trim().toLowerCase()
+    //    console.log(userMonth);
+       
+         if (userMonth === '') {
+            alert('Enter a valid month')
+        }
+        else if (userMonth === 'january' || userMonth === 'march'||userMonth ==='may'||userMonth ==='july' ||userMonth ==='august' || userMonth === 'october' ||userMonth ==='december' ) {
+            display.innerHTML = `There are ${31} Days in ${userInput.value} month`
+            
+        }
+        else if (userMonth === 'feburary') {
+             display.innerHTML = 'thee are 28 days in febuary'
+            
+        }else if (userMonth === 'april' || userMonth === 'june' || userMonth === 'september' || userMonth === 'november') {
+            display.innerHTML = `there are ${30} days in ${userInput.value} month` 
+            
+        }
+        else{
+           display.innerHTML = 'no day'  
+        }
+       }
+</script>

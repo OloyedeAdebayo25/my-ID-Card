@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    *{
+        box-sizing: border-box;
+
+    }
+    body{
+        background-color: rgb(121, 109, 66);
+        height: 100vh;
+        margin: 0px auto;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #display input{
+        width: 250px;
+        height: 50px;
+        margin-left: 5px;
+        background-color: rgb(79, 173, 79);
+        color: aliceblue;
+        
+    }
+   
+    .whole-container h3{
+        background: whitesmoke ;
+        display: flex;
+        justify-content: center;
+    }
+    .whole-container{
+        display: block;
+        margin: 5px;
+        width: 300px;
+        height: 450px;
+        flex-wrap: wrap;
+        gap: 5px;
+        border: 20px double;
+        padding: 3px;
+        border-radius: 20px;
+    }
+    #display{
+        width: 250px;
+        height: 50px;
+        border: 5px;
+        background: rgb(79, 173, 79);
+        display: block;
+    
+      
+    }
+    .operators button{
+        height: 60px;
+        width: 60px;
+        margin-top: 10px 10px 10px 10px;
+        border-radius: 20px;
+    }
+    button:hover {
+        background-color: aquamarine;
+    }
+   
+</style>
+
+</head>
+
+<body>
+    <div class="whole-container">
+        <h3>michael's calculator</h3>
+        <div id="display">
+            <input type="text" id="screen" readonly>
+        </div>
+        <div class="operators">
+            <button  onclick="clickMe(1)">1</button>
+            <button  onclick="clickMe(2)">2</button>
+            <button  onclick="clickMe(3)">3</button>
+            <button  onclick="clickMe(4)">4</button>
+            <button  onclick="clickMe(5)">5</button>
+            <button  onclick="clickMe(6)">6</button>
+            <button  onclick="clickMe(7)">7</button>
+            <button  onclick="clickMe(8)">8</button>
+            <button  onclick="clickMe(9)">9</button>
+            <button  onclick="clickMe(0)">0</button>
+            <button  onclick="clickMe('-')">-</button>
+            <button  onclick="clickMe('+')">+</button>
+            <button  onclick="clickMe('*')">*</button>
+            <button  onclick="clickMe('/')">/</button>
+            <button  onclick="cancel()">C</button>
+            <button  onclick="calculate()">=</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let output = document.getElementById('screen');
+
+    function clickMe(value) {
+        
+        output.value += value;
+        
+    }
+    function cancel() {
+        output.value = "";
+    }
+  function calculate() {
+    if (output.value) {
+
+        let lastChar = output.value.slice(-1);
+
+        if ("+-*/".includes(lastChar)) {
+            output.value = "Error";
+        } else {
+            output.value = eval(output.value);
+        }
+
+    }
+}
+
+</script>

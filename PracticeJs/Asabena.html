@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="height" type="Number">
+    <input id="base" type="Number">
+    <button onclick="calculateArea()">Calculate</button>
+    <p id="Result">Area of a triangle</p>
+
+
+    <input id="sideA" type="number">
+    <input id="sideB" type="number">
+    <input id="sideC" type="number">
+    <button onclick="calculatePerimeter()">Perimeter of a triangle</button>
+</body>
+</html>
+<script>
+
+    let height = document.getElementById('height')
+    let base = document.getElementById('base')
+    let result = document.getElementById('Result')
+
+    let sideA = document.getElementById('sideA')
+    let sideB = document.getElementById('sideB')
+    let sideC = document.getElementById('sideC')
+    let calculate = document.getElementById('calculate')
+
+    function calculateArea() {
+       let heightVal = height.value;
+       let baseVal = base.value;
+       let calculateArea = ( 0.5 * baseVal * heightVal);
+       console.log(calculateArea);
+       
+    }
+
+    function calculatePerimeter() {
+        let sideAval = sideA.value;
+        let sideBval = sideB.value;
+        let sideCval = sideC.value;
+        console.log(typeof(sideAval));
+        
+      
+        
+        let calculatePerimeter = parseInt(sideAval) + parseInt(sideBval) +parseInt(sideCval)
+        console.log(calculatePerimeter);
+        
+        
+    }
+</script>

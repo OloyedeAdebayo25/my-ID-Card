@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="length" type="Number">
+    <input id="width" type="Number">
+    <button onclick="Calculate ()">Calculate Area and Perimeter of Rectangle</button>
+    <p id="Result"></p>
+</body>
+</html>
+<script>
+
+    let length = document.getElementById('length')
+    let width = document.getElementById('width')
+    let calculate = document.getElementById('Calculate')
+    
+
+    function Calculate() {
+    let AreaRectangle = length.value * width.value
+    console.log(AreaRectangle);
+    
+    let Perimeter = 2*(Number(length.value) + Number(width.value))
+    console.log(Perimeter);
+
+     Result.innerHTML = `the Area of the rectangle is ${AreaRectangle} and the perimeter is ${Perimeter}`
+        
+    }
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTuzqMrax_TxNQORfOCyju9tQuB1D9tj10pQ&s" width="200"
+        height="200" alt="" id="lightBulb">
+
+    <button onclick="toogleLightSwitch()"> click me </button>
+
+    <p id="stateMood"> </p>
+
+</body>
+
+</html>
+<script>
+    let lightBulb = document.getElementById('lightBulb')
+
+    let canSubmit = true
+
+
+    if ('') {
+        console.log('mr wisdom can submit');
+    } else {
+        console.log('mr wisdom cannot submit');
+    }
+
+    let isLightOn = false
+
+    function toogleLightSwitch() {
+        if (isLightOn === false) {
+            lightBulb.src = 'https://cdn.mos.cms.futurecdn.net/HaPnm6P7TZhPQGGUxtDjAg-600-80.jpg'
+            isLightOn = true
+        } else {
+            lightBulb.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTuzqMrax_TxNQORfOCyju9tQuB1D9tj10pQ&s'
+            isLightOn = false
+        }
+    }
+
+
+    let isHappy = false
+    let pTag = document.getElementById('stateMood')
+
+    if (isHappy === true) {
+        pTag.innerHTML = 'user1 is in a happy mood'
+    } else {
+        pTag.innerHTML = 'user1 is not in a happy mood'
+    }
+
+
+
+    let num = 0
+    if (num > 0) {
+        console.log(`${num} is a positive number`)
+    } else if (num < 0) {
+        console.log(`${num} is a negative number`)
+    } else {
+        console.log(`${num} is 0`)
+    }
+
+
+    let num2 = 5
+
+    if (num > 0) {
+        console.log('hey');
+    } else if (num > 2) {
+        console.log('hi ');
+    } else if (num < 0) {
+        console.log('hello');
+    } else {
+        console.log('whats up');
+    }
+
+
+
+
+
+
+</script>

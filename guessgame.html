@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <main class="m-auto p4 rounded w-50 shadow">
+        <h1 class="text-center fw-bolder">Guessing Game</h1>
+        <input type="number"id=numInput" class="form-control mt-4">
+        <button class="btn btn-success mt-4" onclick="checkguess()">Check Guess</button>
+        <div id="Output"></div>
+    </main>
+</body>
+</html>
+<script>
+    console.log('Hello World');
+    let numInput =
+    function checkguess() {
+        //console.lo('Button Clicked');
+        let randNum = Math.ceil(Math.random() * 10)
+        let numInput = document.querySelector('#numInput').value.trim()
+        let output = document.querySelector("#output")
+        console.log(randNum);
+        console.log(numInput);
+
+        let checker = randNum == +numInput
+        // randNum = 4 as a number
+        // numInput = "4" as a string
+
+        checker.innerHTML=Checker ?
+        innerHTML = `<h1>You guessed right, the computer guessed ${randNum}</h1>`
+        innerHTML = `<h1>You guessed wrong, the computer guessed ${randNum}</h1>`
+    }
+</script>
