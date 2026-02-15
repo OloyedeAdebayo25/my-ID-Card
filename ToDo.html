@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="Todo" type="text">
+    <button onclick="btn()">Add ToDo</button>
+</body>
+</html>
+<script>
+
+    let arr =[1,2,3,4,5,6,7,8,9,10]
+    let state = ['lagos', 'ibadan', 'osun', 'ikire']
+    arr.splice()
+   // forEach
+//map
+//filter
+//reduce
+//every
+//find
+//findIndex
+//some
+
+
+for (let index = 0; index < arr.length; index++) {
+    console.log(arr[index], index);
+    
+}
+for (const element of arr) {
+    console.log(element);  
+}
+
+
+arr.forEach((element, i, array)=>{
+    console.log(element, i, array);
+    
+})
+
+let arr2 = arr.map((el,i, ar)=>{
+    return el*2
+
+})
+console.log(arr2);
+
+
+let even = state.filter((el, i, ar)=>{
+    return el.includes('o') 
+})
+console.log(even);
+
+let num = arr.filter(el=>{
+    
+})
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    .calculator{
+        height: 50%;
+        width: 60%;
+        padding: 5vh 10vh;
+        margin: 10vh 20vh;
+        /* align-items: center; */
+        /* justify-content: center; */
+        background-color: pink;
+
+    }
+    input{
+        padding: 7px;
+        margin-bottom: 8px;
+    }
+    button{
+         height: 20px;
+        width: 40px;
+        margin: 5px;
+    }
+    #output{
+        margin: 10px 15px;
+    }
+</style> -->
+
+
+<style>
+    body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.buttons button {
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+.buttons button:hover {
+    background: #666;
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}
+
+#output {
+    background: #000;
+    color: #0f0;
+    padding: 12px;
+    font-size: 22px;
+    border-radius: 6px;
+    text-align: right;
+}
+
+</style>
+<body>
+    <div class="calculator">
+        <div>
+            <input id="num1" type ="number">
+            <input id="num2" type ="number">
+        </div>
+        <button onclick='Add()'class= "Add">+</button>
+        <button onclick='Multiply()'class="Multiply">*</button>
+        <button onclick='Divide()'class="Divide">/</button>
+        <button onclick='Subrtact()'class="Subtract">-</button>
+        <div id="output">0</div>
+    </div>
+
+</body>
+</html>
+<script>
+
+
+    function Add(params) {
+        let num1 = document.getElementById('num1').value
+        let num2 = document.getElementById('num2').value
+        let sum = parseInt(num1) + parseInt(num2)
+        output.innerHTML= sum
+        
+    }
+    function Subrtact(params) {
+        let num1 = document.getElementById('num1').value
+        let num2 = document.getElementById('num2').value
+        let sum = parseInt(num1) - parseInt(num2)
+        output.innerHTML= sum
+        
+    }
+    function Divide(params) {
+        let num1 = document.getElementById('num1').value
+        let num2 = document.getElementById('num2').value
+        let sum = parseInt(num1) / parseInt(num2)
+        output.innerHTML= sum
+        
+    }
+    function Multiply(params) {
+        let num1 = document.getElementById('num1').value
+        let num2 = document.getElementById('num2').value
+        let sum = parseInt(num1) * parseInt(num2)
+        output.innerHTML= sum
+        
+    }
+</script>

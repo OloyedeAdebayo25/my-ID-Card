@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button onclick="Decreasig()">decrease</button>
+</body>
+</html>
+<script>
+  let input = document.getElementById('input')
+
+  function decrease(params) {
+    let decreases = setInterval(() =>{
+        if (+input.value === 0) {
+            alert('time up')
+            clearInterval(decrease)
+            return
+        }
+  }
+  input.value--
+  }}
+</script>

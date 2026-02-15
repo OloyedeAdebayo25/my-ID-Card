@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button onclick="btn()">click me</button>
+</body>
+</html>
+<script src="./index.js">
+// name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
+
+let dog = {
+name: 'Bingo',
+legs: 4,
+color:'brown',
+age: 10,
+bark: ()=>{
+    alert('woof woof')
+}
+}
+
+dog.getInfo=['kids', 'friends'],
+dog.breed='GermanSheperd'
+
+console.log(dog);
+
+console.log(dog.name, dog.legs, dog.color, dog.age, dog.bark());
+
+//     let kennyTechStaff= {
+//         name: "Aunty seun", 
+//         age: 25, 
+//         job: ['secretary', 'marketer', 'content-manager', 'account officer'],
+//         isAvailabe: true
+//     }
+//     let useArr= [1,3,4,56,6,7,70]
+
+//     let arr2 = [useArr]
+//     console.log(arr2);
+    
+   
+    
+//     console.log(kennyTechStaff);
+    
+//     // console.log(kennyTechStaff.isAvailabe);
+//     let job = kennyTechStaff.job
+//     // console.log(job);
+//     kennyTechStaff.isMarried=true
+//     kennyTechStaff.time= 
+//     console.log(kennyTechStaff);
+
+
+
+//     const person = {
+//   firstName: 'Asabeneh',
+//   lastName: 'Yetayeh',
+//   age: 250,
+//   country: 'Nigeria',
+//   city: 'Ibadan',
+//   skills: [
+//     'HTML',
+//     'CSS',
+//     'JavaScript',
+//     'React',
+//     'Node',
+//     'MongoDB',
+//     'Python',
+//     'D3.js'
+//   ],
+//   isMarried: true,
+//   job_status:{
+//     job: 'engineer',
+//     experience: "4 years",
+//     position: 'snr dev'
+//   }
+// }
+
+// person.localGovt='oluyole'
+// person.children = 5
+// console.log(person);
+
+// function btn() {
+    
+//     if (person.isMarried) {
+//         alert(`${person.firstName} is married`)
+//     }else{
+//         alert(`${person.firstName} is single`)
+//     }
+    
+// }
+// let position = person.job_status.position
+// console.log(position);
+
+
+// let skill= person.skills.includes('Node')
+// console.log(skill);
+
+//     person.middleNme = 'Adebayo'
+//     console.log(person);
+
+    
+    
+// let   newObj= {person, partner: 'tanwa'}
+// let value = Object.values(person)
+// let key = Object.keys(person)
+// console.log(key);
+//  function sing(params) {
+//     return 'this user is singing'
+
+//  }
+
+//  let singer = (params) {
+//     return 'this user is singing'
+//  }
+
+//  const user = ()=>{
+
+//  }
+
+let count = 0
+
+function display(params) {
+    users[params].image = imgtag.src
+}
+setInterval(() => {
+    function next(params) {
+    count +=1
+    if (count>users.length-1) {
+        count = 0
+        next(count)
+    }
+    next(count)
+}
+}, 1000);
+
+function prev(params) {
+    
+}
+
+</script>

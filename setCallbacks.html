@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showSmth()">Click me</button>
+    <p id="preview"></p>
+</body>
+</html>
+<script>
+
+    setTimeout(function () {
+ document.body.style.backgroundColor = 'green'
+    } , 2000 )
+
+    function showSmth() {
+        let button = document.getElementById('button')
+        button.innerHTML = 'loading...'
+        button.disabled = true
+
+        setTimeout(() =>{
+            //preview.innerHTML = 'im done loading'
+            alert('ive loaded')
+            button.innerHTML = 'click me'
+            button.disabled = false
+        }, 3000)
+    }
+
+    // setInterval
+    setInterval(()=>{
+        function r(params) {
+            return Mat.floor(Math.random()* 256)   
+        }
+        document.body.style.backgroundColor = (() => {})
+    }, 2000)
+</script>
